@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    build: .
+    container_name: birthday-app
+    ports:
+      - "8081:8081"
+    volumes:
+      - .:/app
+    networks:
+      - birthday-network
+
+networks:
+  birthday-network:
+    driver: bridge
+
